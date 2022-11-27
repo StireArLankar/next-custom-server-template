@@ -1,0 +1,85 @@
+{
+  "status": {
+    "paid": "Status - paid",
+    "canceled": "Status - canceled"
+  },
+  "createNew": "Create a new QR-code",
+  "fps": "Fast payment system",
+  "how": "How it works?",
+  "values": "Invoiced for {{rubAmount}} RUB to accrue {{amount}} {{currency}}",
+  "valuesRub": "Invoiced for {{rubAmount}} RUB",
+  "list": {
+    "0": "Point the camera (QR reader) or click on the link",
+    "1": "Pay in banking app",
+    "2": "The project balance will replenish automatically"
+  },
+  "method": "More about the method",
+  "fpsSupports": "FPS is already supported by more than 130 banks",
+  "errors": {
+    "bad_request": "Internal error",
+    "bad_context": "Internal error",
+    "bad_amount_min": "Less than min amount",
+    "bad_amount_max": "More than max amount",
+    "no_auth": "Error! Account verification is required to use the FPS method",
+    "not_found": "Internal error",
+    "missing_project": "Internal error",
+    "missing_email": "Invalid email",
+    "invalid_email": "Invalid email",
+    "missing_code": "Internal error",
+    "invalid_code": "Internal error",
+    "duplicate_order": "Internal error",
+    "send_failed": "Internal error",
+    "resend_not_allowed": "Internal error",
+    "tries_exceeded": "Internal error",
+    "no_product_available": "Internal error",
+    "project_account_not_found": "Internal error",
+    "qrcode_create_failure": "Internal error",
+    "internal_error": "Internal error",
+    "failure": "Internal error",
+    "service_not_available": "Internal error"
+  },
+
+  "code": {
+    "changedRates": "The rates have changed. Update required",
+    "codeExpired": "Verification code expired",
+    "codeSent": "Verification code sent",
+    "label": "Code",
+    "proceed": "Proceed",
+    "refresh": "Refresh",
+    "resendCode": "Resend",
+    "resendCodeAfter": "Resend confirmation code to <b>{{login}}</b> in {{count}} second",
+    "resendCodeAfter_plural": "Resend confirmation code to <b>{{login}}</b> in {{count}} seconds",
+    "title": "Verification code",
+
+    "verificationCodeSent": "Confirmation code in P-XXXXXX format sent to <b>{{login}}</b>",
+    "senderCompany": "Account verification will be done through the service <b>{{company}}</b>"
+  },
+
+  "description1": "You pay for the purchase from our partner using the fast payment system (FPS)",
+  "description2": {
+    "email": "The ordered product will be sent to your email",
+    "phone": "The ordered product will be sent to your phone"
+  },
+
+  "order": "Order №",
+  "good": "Product:",
+  "price": "Price:",
+  "payButton": "Pay",
+
+  "invalidCode": "Invalid code",
+  "requiredCode": "Enter the code",
+
+  "invalidLogin": "Invalid contact",
+  "requiredLogin": "Enter email or phone",
+
+  "login": "Email or phone",
+
+  "proceed": "Proceed",
+
+  "verification": {
+    "description1": "Verification of your contact is required to make a purchase on the partner's website",
+    "description1Phone": "To make a purchase on the partner's website, you need to confirm your phone number, to which the goods you ordered will be sent",
+    "description1Email": "To make a purchase on the partner's website, confirmation of your mail is required, to which the goods you ordered will be sent",
+    "description2": "You have been sent code in the format SBP-XXXXXX"
+  }
+}

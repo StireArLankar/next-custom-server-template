@@ -1,0 +1,110 @@
+import path from 'path';
+
+import merge from 'deepmerge';
+import NextServer, { Options } from 'next/dist/server/next-server';
+
+import config from '../../next.config';
+
+const baseConfig: Options = {
+  hostname: 'localhost',
+  port: 3022,
+  dir: path.join(__dirname),
+  dev: false,
+  conf: {
+    env: {},
+    webpackDevMiddleware: null,
+    eslint: { ignoreDuringBuilds: true },
+    typescript: {
+      ignoreBuildErrors: true,
+      tsconfigPath: 'tsconfig.json',
+    },
+    distDir: '../.next',
+    cleanDistDir: true,
+    assetPrefix: '/FOR_REPLACE',
+    configOrigin: 'next.config.js',
+    useFileSystemPublicRoutes: true,
+    generateEtags: true,
+    pageExtensions: ['page.tsx', 'page.ts'],
+    target: 'server',
+    poweredByHeader: true,
+    compress: true,
+    analyticsId: '',
+    images: {
+      deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+      path: '/FOR_REPLACE/_next/image',
+      loader: 'default',
+      loaderFile: '',
+      domains: [],
+      disableStaticImages: false,
+      minimumCacheTTL: 60,
+      formats: ['image/webp'],
+      dangerouslyAllowSVG: false,
+      contentSecurityPolicy: "script-src 'none'; frame-src 'none'; sandbox;",
+      remotePatterns: [],
+      unoptimized: false,
+    },
+    devIndicators: {
+      buildActivity: true,
+      buildActivityPosition: 'bottom-right',
+    },
+    onDemandEntries: { maxInactiveAge: 15000, pagesBufferLength: 2 },
+    amp: { canonicalBase: '/FOR_REPLACE' },
+    basePath: '/FOR_REPLACE',
+    sassOptions: {},
+    trailingSlash: false,
+    i18n: null,
+    productionBrowserSourceMaps: false,
+    optimizeFonts: true,
+    excludeDefaultMomentLocales: true,
+    serverRuntimeConfig: {},
+    publicRuntimeConfig: { basePath: '/FOR_REPLACE' },
+    reactStrictMode: false,
+    httpAgentOptions: { keepAlive: true },
+    outputFileTracing: true,
+    staticPageGenerationTimeout: 60,
+    swcMinify: true,
+    output: 'standalone',
+    experimental: {
+      middlewarePrefetch: 'flexible',
+      optimisticClientCache: true,
+      manualClientBasePath: false,
+      legacyBrowsers: false,
+      newNextLinkBehavior: true,
+      cpus: 15,
+      sharedPool: true,
+      profiling: false,
+      isrFlushToDisk: true,
+      workerThreads: false,
+      pageEnv: false,
+      optimizeCss: false,
+      nextScriptWorkers: false,
+      scrollRestoration: false,
+      externalDir: false,
+      disableOptimizedLoading: false,
+      gzipSize: true,
+      swcFileReading: true,
+      craCompat: false,
+      esmExternals: true,
+      appDir: false,
+      isrMemoryCacheSize: 52428800,
+      fullySpecified: false,
+      outputFileTracingRoot: '',
+      swcTraceProfiling: false,
+      forceSwcTransforms: false,
+      largePageDataBytes: 128000,
+      enableUndici: false,
+      adjustFontFallbacks: false,
+      adjustFontFallbacksWithSizeAdjust: false,
+      //@ts-ignore
+      trustHostHeader: false,
+    },
+    configFileName: 'next.config.js',
+  },
+};
+
+export const conf = merge(baseConfig.conf, config);
+
+const nextServer = new NextServer({ ...baseConfig, conf });
+
+export default nextServer;

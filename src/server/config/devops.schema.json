@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "service": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Имя приложения" },
+        "environment": { "type": "string", "description": "Окружение" },
+        "hostUrl": {
+          "type": "string",
+          "description": "Ури, по которому доступен сервер"
+        }
+      },
+      "required": ["name", "environment", "hostUrl"],
+      "additionalProperties": false,
+      "description": "Базовые настройки сервиса"
+    },
+    "ports": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "type": ["string", "number"],
+          "description": "Основной порт"
+        },
+        "management": {
+          "type": ["string", "number"],
+          "description": "Менеджемент порт для дебаг целей, доступ только через внутреннюю сеть"
+        }
+      },
+      "required": ["application", "management"],
+      "additionalProperties": false,
+      "description": "Порты на которых будет работать сервис"
+    },
+    "product": {
+      "type": "string",
+      "description": "Название продукта, в состав которого входит приложение."
+    },
+    "managerConfig": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "урл, по которому будут делаться запросы за менеджерским конфигом (создается девопсом в конфиге разносчика конфигов)"
+        },
+        "pollingIntervalSeconds": {
+          "type": "number",
+          "description": "время в секундах между запросами за менеджерским конфигом"
+        }
+      },
+      "required": ["url", "pollingIntervalSeconds"],
+      "additionalProperties": false,
+      "description": "настройки для получения менеджерского конфига"
+    },
+    "host": {
+      "type": "string",
+      "description": "хост приложения, к примеру `localhost:3000` (без протокола)"
+    }
+  },
+  "required": ["service", "ports", "product", "managerConfig", "host"],
+  "additionalProperties": false
+}

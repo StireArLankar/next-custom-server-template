@@ -1,10 +1,17 @@
-const { i18n } = require('./next-i18next.config');
+//@ts-ignore
+import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+import type { NextConfig } from 'next';
 
 const basePath = '/FOR_REPLACE';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  i18n,
+const nextConfig: NextConfig = {
+  i18n: {
+    //@ts-ignore
+    reloadOnPrerender: process.env.NODE_ENV !== 'production',
+    defaultLocale: 'en',
+    locales: ['en', 'ru'],
+    fallbackLng: false,
+  },
   pageExtensions: ['page.tsx', 'page.ts'],
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
@@ -24,6 +31,7 @@ const nextConfig = {
   },
   amp: { canonicalBase: basePath },
   reactStrictMode: false,
+  output: 'standalone',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -36,14 +44,8 @@ const nextConfig = {
     // Will be available on both server and client
     basePath,
   },
-  output: 'standalone',
 };
 
-const res =
-  process.env.IS_BUILDING === 'true'
-    ? require('@vanilla-extract/next-plugin').createVanillaExtractPlugin()(
-        nextConfig
-      )
-    : nextConfig;
+const res = createVanillaExtractPlugin()(nextConfig);
 
-module.exports = res;
+export default res;

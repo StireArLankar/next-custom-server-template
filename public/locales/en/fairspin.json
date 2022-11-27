@@ -1,0 +1,19 @@
+{
+  "invalidCode": "Invalid code",
+  "requiredCode": "Enter the code",
+
+  "secondary": {
+    "success": "A gift has been sent to you!",
+    "canCloseWindow": "The window can be closed"
+  },
+
+  "primary": {
+    "proceed": "Proceed",
+    "sentTo": "To complete, enter the code sent to {{login}}",
+    "sentToFrom": "To complete, enter the code sent to {{login}} from {{from}}",
+    "code": "Code",
+    "success": "A gift has been sent to you!",
+    "canCloseWindow": "The window can be closed",
+    "title": "You made a purchase on a partner site"
+  }
+}

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../src/server/config/devops.schema.json
+
+host: localhost:9002
+
+service:
+  name: test
+  environment: local
+  hostUrl: /FOR_REPLACE
+
+ports:
+  application: '9002'
+  management: '9000'
+
+product: paytoplay
+
+managerConfig:
+  pollingIntervalSeconds: 30
+  url: http://google.com

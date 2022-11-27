@@ -1,0 +1,125 @@
+{
+  "$schema": "../src/server/config/manager.schema.json",
+
+  "translations": {
+    "en": {
+      "common": {
+        "status": {
+          "paid": "Status - paid",
+          "canceled": "Status - canceled"
+        },
+        "createNew": "Create a new QR-code",
+        "fps": "Fast payment system",
+        "how": "How it works?",
+        "values": "Invoiced for {{rubAmount}} RUB to accrue {{amount}} {{currency}}",
+        "valuesRub": "Invoiced for {{rubAmount}} RUB",
+        "list": {
+          "0": "Point the camera (QR reader) or click on the link",
+          "1": "Pay in banking app",
+          "2": "The project balance will replenish automatically"
+        },
+        "method": "More about the method",
+        "fpsSupports": "FPS is already supported by more than 130 banks",
+        "errors": {
+          "bad_request": "Internal error",
+          "bad_context": "Internal error",
+          "bad_amount_min": "Less than min amount",
+          "bad_amount_max": "More than max amount",
+          "no_auth": "Error! Account verification is required to use the FPS method",
+          "not_found": "Internal error",
+          "missing_project": "Internal error",
+          "missing_email": "Invalid email",
+          "invalid_email": "Invalid email",
+          "missing_code": "Internal error",
+          "invalid_code": "Internal error",
+          "duplicate_order": "Internal error",
+          "send_failed": "Internal error",
+          "resend_not_allowed": "Internal error",
+          "tries_exceeded": "Internal error",
+          "no_product_available": "Internal error",
+          "project_account_not_found": "Internal error",
+          "qrcode_create_failure": "Internal error",
+          "internal_error": "Internal error",
+          "failure": "Internal error",
+          "service_not_available": "Internal error"
+        },
+
+        "code": {
+          "changedRates": "The rates have changed. Update required",
+          "codeExpired": "Verification code expired",
+          "codeSent": "Verification code sent",
+          "label": "Code",
+          "proceed": "Proceed",
+          "refresh": "Refresh",
+          "resendCode": "Resend",
+          "resendCodeAfter": "Resend confirmation code to <b>{{login}}</b> in {{count}} second",
+          "resendCodeAfter_plural": "Resend confirmation code to <b>{{login}}</b> in {{count}} seconds",
+          "title": "Verification code",
+
+          "verificationCodeSent": "Confirmation code in P-XXXXXX format sent to <b>{{login}}</b>",
+          "senderCompany": "Account verification will be done through the service <b>{{company}}</b>"
+        }
+      }
+    },
+    "ru": {
+      "common": {
+        "status": {
+          "paid": "Статус - оплачено",
+          "canceled": "Статус - отменено"
+        },
+        "createNew": "Создать новый QR-код",
+        "fps": "Система быстрых платежей",
+        "how": "Как это работает?",
+        "values": "Выставлен счет на {{rubAmount}} RUB для начисления {{amount}} {{currency}}",
+        "valuesRub": "Выставлен счет на {{rubAmount}} RUB",
+        "list": {
+          "0": "Навести камеру (QR ридер) или нажать на ссылку",
+          "1": "Оплатить в банковском приложении",
+          "2": "Баланс проекта пополнится автоматически"
+        },
+        "method": "Больше про метод",
+        "fpsSupports": "СБП уже поддерживают больше 130 банков",
+        "errors": {
+          "bad_request": "Внутренняя ошибка",
+          "bad_context": "Внутренняя ошибка",
+          "bad_amount_min": "Меньше минимальной суммы",
+          "bad_amount_max": "Больше максимальной суммы",
+          "no_auth": "Ошибка! Для использования метода СБП требуется верификация аккаунта",
+          "not_found": "Внутренняя ошибка",
+          "missing_project": "Внутренняя ошибка",
+          "missing_email": "Неверный адрес email-a",
+          "invalid_email": "Неверный адрес email-a",
+          "missing_code": "Внутренняя ошибка",
+          "invalid_code": "Внутренняя ошибка",
+          "duplicate_order": "Внутренняя ошибка",
+          "send_failed": "Внутренняя ошибка",
+          "resend_not_allowed": "Внутренняя ошибка",
+          "tries_exceeded": "Внутренняя ошибка",
+          "no_product_available": "Внутренняя ошибка",
+          "project_account_not_found": "Внутренняя ошибка",
+          "qrcode_create_failure": "Внутренняя ошибка",
+          "internal_error": "Внутренняя ошибка",
+          "failure": "Внутренняя ошибка",
+          "service_not_available": "Внутренняя ошибка"
+        },
+
+        "code": {
+          "changedRates": "Курсы изменились. Требуется обновление",
+          "codeExpired": "Срок действия проверочного кода истек",
+          "codeSent": "Отправлен проверочный код",
+          "label": "Код",
+          "proceed": "Продолжить",
+          "refresh": "Обновить",
+          "resendCode": "Отправить",
+          "resendCodeAfter_0": "Вы сможете выслать код ещё раз на <b>{{login}}</b> через {{count}} секунду",
+          "resendCodeAfter_1": "Вы сможете выслать код ещё раз на <b>{{login}}</b> через {{count}} секунды",
+          "resendCodeAfter_2": "Вы сможете выслать код ещё раз на <b>{{login}}</b> через {{count}} секунд",
+          "title": "Проверочный код",
+
+          "verificationCodeSent": "Код подтверждения в формате P-XXXXXX отправлен на <b>{{login}}</b>",
+          "senderCompany": "Верификация аккунта будет произведена через сервис <b>{{company}}</b>"
+        }
+      }
+    }
+  }
+}
