@@ -581,27 +581,27 @@
     "@tanstack/query-core" "4.18.0"
     use-sync-external-store "^1.2.0"
 
-"@trpc/client@^10.2.0":
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-10.2.0.tgz#310752768c7d2a1129a91689b233a62bcf87762e"
-  integrity sha512-Mehf6euqMzAak+Umay1LKol9nC716yBjHNqrF6blWY/n2hwSICrLXQwveNaHK7qjKXJ86b4aDW39KR02WCQP4A==
+"@trpc/client@^10.8.2":
+  version "10.8.2"
+  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-10.8.2.tgz#20b82d7ea5f87c498296889bbe397b45e4c0d4e4"
+  integrity sha512-uQi+FWjogxQS7H09s5phWB8XeazlbA6R1eabFXq84Tmtvt6BWTYxStFLcv7C/p8gyduwT8/ZyrZ61P1Igce7gA==
 
-"@trpc/next@^10.2.0":
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/@trpc/next/-/next-10.2.0.tgz#b7989e76d4747937f9f38cd643cf943ef5e88afa"
-  integrity sha512-1zbZb9Xd6nYVZfgb6zNA6fLzZ5CWZjd7KYSUIWY0Bh7cVjDAmAtIj2wC3wcXWI7UsKntLIpvUB4XMEsFK/RxiQ==
+"@trpc/next@^10.8.2":
+  version "10.8.2"
+  resolved "https://registry.yarnpkg.com/@trpc/next/-/next-10.8.2.tgz#c8b004382e17b8d41f2bd54407ab1eeab792dedc"
+  integrity sha512-exJzXUZbTK4vWVQRVfnwnWenjVNXPGqgWpa70r92X+w3bNatfqf4FUFegFcswpcK1JSHZCjye25eiiB7WVYQ1g==
   dependencies:
     react-ssr-prepass "^1.5.0"
 
-"@trpc/react-query@^10.2.0":
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/@trpc/react-query/-/react-query-10.2.0.tgz#0c376586bc4baa31d6d3fe38fed2b61dd0a6c8ef"
-  integrity sha512-OH1T1VztPp9qG66cvxPd/Sr9pPsDn+nFmgWtpJmoiTgZJ2DnUPsdi9DVkXdaE9M2OwdoXhFqwboclPzaUAD22g==
+"@trpc/react-query@^10.8.2":
+  version "10.8.2"
+  resolved "https://registry.yarnpkg.com/@trpc/react-query/-/react-query-10.8.2.tgz#23194e2ccdb7ab495f48ca5cea00b0f746b016fe"
+  integrity sha512-Ehpv1cKkTC3yHdZvVTR0iCRk/TGUsNzRUdsHZm8ZFw3+LE3QCygMjvrFo+Dbgs/c/ZcZ2e9rW8tr40B6eGZCRg==
 
-"@trpc/server@^10.2.0":
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-10.2.0.tgz#7716329ab9de742c0d604bc48759e4d1f1434225"
-  integrity sha512-WGOA2bk6JOnOywUu1gkAgwqnxZ5g+vNkL9EpCGLgKYwwMcjAwgNRgYzLPsDsR1XL48wmdYOzfWzJ0G575+g/jA==
+"@trpc/server@^10.8.2":
+  version "10.8.2"
+  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-10.8.2.tgz#b89b8f8c5cd5a601eddf6c72da8dff306aeb0242"
+  integrity sha512-a5Ak83Q01l0yV8lg2NkpQeYWdNPjKxXVllBLliWdkvkVEodH3mLqqhYymzJkhCusSlBwwOff28JRHY0gF98/zQ==
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.9"
@@ -3352,7 +3352,7 @@ node-addon-api@^5.0.0:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-5.0.0.tgz#7d7e6f9ef89043befdb20c1989c905ebde18c501"
   integrity sha512-CvkDw2OEnme7ybCykJpVcKH+uAOLV2qLqiyla128dN9TkEWfrYmxG6C2boDe5KcNQqZF3orkqzGgOMvZ/JNekA==
 
-node-mocks-http@^1.11.0:
+node-mocks-http@^1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/node-mocks-http/-/node-mocks-http-1.12.1.tgz#838e176019daf177caff6bb8534e3a32646e7531"
   integrity sha512-jrA7Sn3qI6GsHgWtUW3gMj0vO6Yz0nJjzg3jRZYjcfj4tzi8oWPauDK1qHVJoAxTbwuDHF1JiM9GISZ/ocI/ig==
@@ -3487,10 +3487,10 @@ open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
-openapi-types@^12.0.2:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-12.0.2.tgz#b752ab0a463c594fd7e3142e0e5983a9645503f6"
-  integrity sha512-GuTo7FyZjOIWVhIhQSWJVaws6A82sWIGyQogxxYBYKZ0NBdyP2CYSIgOwFfSB+UVoPExk/YzFpyYitHS8KVZtA==
+openapi-types@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-12.1.0.tgz#bd01acc937b73c9f6db2ac2031bf0231e21ebff0"
+  integrity sha512-XpeCy01X6L5EpP+6Hc3jWN7rMZJ+/k1lwki/kTmWzbVhdPie3jd5O2ZtedEx8Yp58icJ0osVldLMrTB/zslQXA==
 
 optionator@^0.9.1:
   version "0.9.1"
@@ -4474,16 +4474,16 @@ tree-kill@^1.2.2:
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
-trpc-openapi@^1.0.0-alpha.4:
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/trpc-openapi/-/trpc-openapi-1.0.0-alpha.4.tgz#ea43c5ba46f4e3dde4d4ece066fc880894d6c965"
-  integrity sha512-Zt+IUlYY/pw3Kk78ByTCOZb47r8zJFBUqr1imiOzyVjpaUMVMSPA2RpATCiOJQGSvR70YqoZAMPAu+KPoDmh2w==
+trpc-openapi@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/trpc-openapi/-/trpc-openapi-1.1.1.tgz#895e6276095f36d30e801c98125956c63a582a22"
+  integrity sha512-yz9uu2qdvVNjyU5pAVn9CAg9ZWu8YIOg5exgxwE7t1B/Pr94foIsLeQY0NV8SPpdqpJKVCcKrrl2VtTOLlnmJQ==
   dependencies:
     co-body "^6.1.0"
     lodash.clonedeep "^4.5.0"
-    node-mocks-http "^1.11.0"
-    openapi-types "^12.0.2"
-    zod-to-json-schema "^3.18.1"
+    node-mocks-http "^1.12.1"
+    openapi-types "^12.1.0"
+    zod-to-json-schema "^3.20.1"
 
 ts-node-dev@^2.0.0:
   version "2.0.0"
@@ -4862,12 +4862,12 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zod-to-json-schema@^3.18.1, zod-to-json-schema@^3.19.1:
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/zod-to-json-schema/-/zod-to-json-schema-3.19.1.tgz#10160724c3749c9c3b0a86ce07f18714e6fa25d3"
-  integrity sha512-yZiMqANy17jBPm5F71srrMJIpHeHgwkjIAhxGIRzlwguvipeQ4x77tJeXbowXljn7r8zZYf4Uk8E3Hqf6+sKjA==
+zod-to-json-schema@^3.20.1, zod-to-json-schema@^3.20.2:
+  version "3.20.2"
+  resolved "https://registry.yarnpkg.com/zod-to-json-schema/-/zod-to-json-schema-3.20.2.tgz#576f53749fd90bbb42c99a9b8c81be234bb53cbb"
+  integrity sha512-qka3UAXmVXD8z5SHkRU89UyHp8JHJW7zc8RQCpt7QloJOn6uijwkjUm8o+M/cF1IysmKc5gxac/QeDikaQMdzQ==
 
-zod@^3.19.1:
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-3.19.1.tgz#112f074a97b50bfc4772d4ad1576814bd8ac4473"
-  integrity sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==
+zod@^3.20.2:
+  version "3.20.2"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.20.2.tgz#068606642c8f51b3333981f91c0a8ab37dfc2807"
+  integrity sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==
