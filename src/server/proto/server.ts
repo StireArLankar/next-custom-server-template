@@ -1,4 +1,6 @@
-import { delay } from 'abort-controller-x';
+// import { delay } from 'abort-controller-x';
+import { from } from 'ix/asynciterable';
+import { withAbort } from 'ix/asynciterable/operators';
 import { JWTPayload } from 'jose';
 import {
   CallContext,
@@ -6,6 +8,7 @@ import {
   ServerMiddlewareCall,
   Status,
 } from 'nice-grpc';
+import { interval, map } from 'rxjs';
 
 import {
   GetStateByIdResponse,
@@ -92,6 +95,18 @@ export async function* loggingMiddleware<Request, Response>(
   }
 }
 
+const createState = (): State => ({
+  id: '123',
+  amount: { nanos: 1, units: 2 },
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  description: '213',
+  status: { $case: 'success', success: {} },
+  version: 1,
+});
+
+const observable = interval(5000).pipe(map(createState));
+
 type A = TestServiceImplementation<AuthCallContextExt>;
 export const exampleServiceImpl: A = {
   getStateById: async (request, ctx) => {
@@ -105,15 +120,7 @@ export const exampleServiceImpl: A = {
       result: {
         $case: 'succeed',
         succeed: {
-          state: {
-            id: '123',
-            amount: { nanos: 1, units: 2 },
-            createdAt: new Date(),
-            updatedAt: new Date(),
-            description: '213',
-            status: { $case: 'success', success: {} },
-            version: 1,
-          },
+          state: createState(),
         },
       },
     };
@@ -125,20 +132,22 @@ export const exampleServiceImpl: A = {
     console.log(`readEvents request`);
     console.log(request);
 
-    while (true) {
-      await delay(context.signal, 2000);
+    yield* from(observable).pipe(withAbort(context.signal));
 
-      const state: State = {
-        id: '123',
-        amount: { nanos: 1, units: 2 },
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        description: '213',
-        status: { $case: 'success', success: {} },
-        version: 1,
-      };
+    // while (true) {
+    //   await delay(context.signal, 2000);
 
-      yield state;
-    }
+    //   const state: State = {
+    //     id: '123',
+    //     amount: { nanos: 1, units: 2 },
+    //     createdAt: new Date(),
+    //     updatedAt: new Date(),
+    //     description: '213',
+    //     status: { $case: 'success', success: {} },
+    //     version: 1,
+    //   };
+
+    //   yield state;
+    // }
   },
 };

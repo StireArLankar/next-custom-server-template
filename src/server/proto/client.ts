@@ -60,9 +60,7 @@ export const createGRPCClient = () => {
     .use(authMiddleware)
     .use(loggingMiddleware)
     .create(TestServiceDefinition, channel, {
-      '*': {
-        metadata: new Metadata(),
-      },
+      '*': { metadata: new Metadata() },
     });
 
   // const readEvents = async () => {
