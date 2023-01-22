@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package domain;
+
+// Represents fixed point number with 10^-9 precision.
+// https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers/protobuf-data-types
+// Example: 12345.6789 -> { units = 12345, nanos = 678900000 }
+message DecimalNano {
+    // Whole units part of the amount
+    int64 units = 1;
+
+    // Nano units of the amount (10^-9)
+    // The value must be between -999,999,999 and +999,999,999 inclusive.
+    // Must be same sign as units
+    // If `units` is positive, `nanos` must be positive or zero.
+    // If `units` is zero, `nanos` can be positive, zero, or negative.
+    // If `units` is negative, `nanos` must be negative or zero.
+    sfixed32 nanos = 2;
+}

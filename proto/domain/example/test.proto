@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+import "domain/decimalnano.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+package domain.example;
+
+service TestService {
+    rpc ReadEvents (ReadEventsRequest) returns (stream State);
+    rpc GetStateById(GetStateByIdRequest) returns (GetStateByIdResponse);
+}
+
+enum FailReason {
+    FAIL_REASON_OTHER = 0;
+    FAIL_REASON_EXPIRED = 1;
+    FAIL_REASON_INTERNAL_ERROR = 2;
+}
+
+message State {
+    // deposit UUID on card service side
+    string id = 1;
+    // increments after each update
+    int32 version = 2;
+
+    google.protobuf.StringValue description = 3;
+    google.protobuf.Timestamp created_at = 4;
+    google.protobuf.Timestamp updated_at = 5;
+
+    domain.DecimalNano amount = 6;
+
+    oneof status {
+        InProgress in_progress = 7;
+        Success success = 8;
+        Fail fail = 9;
+    }
+
+    message Success {}
+    message InProgress {}
+    message Fail {
+        repeated FailReason fail_reason = 1;
+        string fail_details = 2;
+    }
+}
+
+message ReadEventsRequest {}
+
+message GetStateByIdRequest {
+    string id = 1;
+}
+
+message GetStateByIdResponse {
+    oneof result {
+        Found succeed = 1;
+        NotFound not_found = 2;
+    }
+
+    message Found {
+        State state = 1;
+    }
+
+    message NotFound {}
+}

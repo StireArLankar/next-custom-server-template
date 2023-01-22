@@ -35,6 +35,7 @@ export default defineConfig({
       '~': resolve(__dirname, 'src', 'server'),
       src: resolve(__dirname, 'src'),
       '@': resolve(__dirname, 'src', 'components'),
+      proto: resolve(__dirname, 'src', 'generated'),
     },
   },
 });

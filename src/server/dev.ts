@@ -19,6 +19,10 @@ export default async function start() {
   const { readConfig, getConfig } = await import('~/config/config.actions');
   await readConfig();
 
+  const { testGRPC } = await import('~/proto');
+
+  await testGRPC();
+
   const { ports, service } = getConfig().devopsConfig;
 
   const languages = getConfig().computed.languages;
