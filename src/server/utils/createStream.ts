@@ -20,10 +20,10 @@ export class BehaviorSubject<T> extends _BehaviorSubject<T> {
 type Params<T> = {
   poll: () => Promise<T>;
   initial: T;
-  delaySec?: number;
+  delaySec?: number | (() => number);
   minCount?: number;
   isComplete: (value: T) => boolean;
-  compare?: (value: T, prev: T) => boolean;
+  compare?: (previous: T, current: T) => boolean;
   log?: (...args: any) => void;
 };
 
@@ -77,10 +77,12 @@ export const createStream = <T>(params: Params<T>) => {
           return poll$;
         }
 
+        const _delaSec = typeof delaySec === 'number' ? delaySec : delaySec();
+
         return of('').pipe(
           tap(() => log('whenToRefresh$')),
-          delay(delaySec * 1000),
-          tap(() => log('whenToRefresh$', 5000)),
+          delay(_delaSec * 1000),
+          tap(() => log('whenToRefresh$', _delaSec * 1000)),
           concatMap((_) => poll$)
         );
       }),
@@ -105,7 +107,14 @@ export const createStream = <T>(params: Params<T>) => {
 
   const _bump = {
     /** функция чтоб запустить поллинг (к примеру пришел колбек) */
-    bump: () => data$.next(data$.getValue()),
+    bump: () => {
+      if (data$.isStopped) {
+        return;
+      }
+
+      mustCheck = true;
+      data$.next(data$.getValue());
+    },
   };
 
   const sub = (handler: (val: T) => void) => {
@@ -121,14 +130,10 @@ export const createStream = <T>(params: Params<T>) => {
 
     subscription.bump();
 
-    mustCheck = true;
-
-    data$.next(data$.getValue());
-
     return subscription;
   };
 
-  return [data$, sub] as const;
+  return [data$, sub, _bump] as const;
 };
 
 type _Temp = ReturnType<typeof createStream>['1'];
